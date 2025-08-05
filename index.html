@@ -35,6 +35,78 @@
       font-family: monospace;
       white-space: pre;
     }
+
+    /* Footer social icon alignment fix */
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 9999px;
+      transition: box-shadow 0.2s;
+    }
+
+    .footer-social a img {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Make all icons same size and vertically aligned */
+    .footer-social a,
+    .footer-social a i {
+      font-size: 1.75rem !important;
+      line-height: 1.75rem !important;
+    }
+
+    .footer-social a:last-child {
+      border: 1px solid #8882;
+      background: var(--color-base-100, #181825);
+      width: 2.75rem;
+      height: 2.75rem;
+      padding: 0;
+      /* Center vertically with others */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+      .footer-social {
+        gap: 1rem;
+      }
+
+      .footer-social a {
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+
+      .footer-social a,
+      .footer-social a i {
+        font-size: 1.25rem !important;
+        line-height: 1.25rem !important;
+      }
+
+      .footer-social a:last-child {
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+
+      .footer-social a img {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
   </style>
 </head>
 
@@ -783,15 +855,21 @@
       <p class="text-secondary">MIT License</p>
 
       <div class="mt-8 flex justify-center space-x-6">
-        <a href="https://github.com/scobru/shogun-core" class="text-secondary hover:text-blue-400">
-          <i class="fab fa-github text-2xl"></i>
+        <a href="https://github.com/scobru/shogun-core" target="_blank" rel="noopener noreferrer"
+          class="text-secondary hover:text-blue-400 transition-colors duration-200 w-10 h-10 rounded-full border border-gray-400 bg-base-100 inline-flex items-center justify-center"
+          title="GitHub Repository">
+          <i class="fab fa-github text-xl"></i>
         </a>
-        <a href="https://t.me/shogun_eco" class="text-secondary hover:text-blue-400">
-          <i class="fab fa-telegram text-2xl"></i>
+        <a href="https://t.me/shogun_eco" target="_blank" rel="noopener noreferrer"
+          class="text-secondary hover:text-blue-400 transition-colors duration-200 w-10 h-10 rounded-full border border-gray-400 bg-base-100 inline-flex items-center justify-center"
+          title="Telegram Community">
+          <i class="fab fa-telegram text-xl"></i>
         </a>
-        <!-- <a href="mailto:scobru@gmail.com" class="text-secondary hover:text-blue-400">
-          <i class="fas fa-envelope text-2xl"></i>
-        </a> -->
+        <a href="https://linda.shogun-eco.xyz/room/public/shogun-eco" target="_blank" rel="noopener noreferrer"
+          class="text-secondary hover:text-blue-400 transition-colors duration-200 w-10 h-10 rounded-full border border-gray-400 bg-base-100 inline-flex items-center justify-center"
+          title="Linda Chat">
+          <img src="logo.svg" alt="Shogun Logo" class="w-24 h-24" />
+        </a>
       </div>
     </div>
   </footer>
