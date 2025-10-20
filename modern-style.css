@@ -1,0 +1,69 @@
+/* S3RVER-inspired Modern Design */
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  min-height: 100vh;
+}
+
+/* Component Cards - S3RVER Style */
+.component-card {
+  background: rgba(40, 44, 52, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 1rem !important;
+  min-height: 420px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.component-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  background: rgba(45, 50, 60, 0.9) !important;
+}
+
+/* Fix relay card button layout */
+.component-card .flex.flex-wrap {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.75rem !important;
+  margin-top: auto !important;
+}
+
+/* Special styling for Live Demo buttons */
+.component-card .btn:has(.fa-globe) {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  grid-column: span 2 !important;
+}
+
+.component-card .btn:has(.fa-globe):hover {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Button Improvements */
+.component-card .btn {
+  border-radius: 0.75rem !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.component-card .btn-outline {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+
+.component-card .btn-outline:hover {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  color: #60a5fa !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2) !important;
+} 
