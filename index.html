@@ -11,6 +11,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="wormhole.css" />
   <link rel="stylesheet" href="onionring.css">
+  <!-- Shogun Onion Widget CSS from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/shogun-onion@0.1.8/onion.css">
+  <!-- Import map for ES modules -->
+  <script type="importmap">
+    {
+      "imports": {
+        "shogun-onion": "https://unpkg.com/shogun-onion@0.1.8/index.js"
+      }
+    }
+  </script>
   <style>
     .component-card {
       transition: all 0.3s ease;
@@ -916,6 +926,23 @@
       </div>
     </div>
   </footer>
+
+  <!-- Shogun Onion Ring Widget -->
+  <div id="shogun-ring"></div>
+
+  <!-- Mount Shogun Onion Widget -->
+  <script type="module">
+    import { mountOnionRing, sitesData } from 'shogun-onion';
+    
+    // Mount the onion ring widget
+    mountOnionRing({
+      ringID: 'shogun-ring',
+      ringName: 'Shogun Network',
+      useIndex: true,
+      useRandom: true,
+      sitesData
+    }).catch((e) => console.error('Failed to mount onion ring:', e));
+  </script>
 
   <!-- Theme toggle script -->
   <script>
