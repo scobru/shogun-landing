@@ -146,7 +146,7 @@
       <h1 class="text-5xl font-extrabold tracking-tight mb-4">Shogun</h1>
       <p class="text-2xl max-w-3xl mx-auto">Decentralized Ecosystem</p>
       <p class="mt-6 text-xl text-secondary max-w-3xl mx-auto">
-        A comprehensive toolkit for developing decentralized Web3
+        A comprehensive toolkit for developing decentralized
         applications, focusing on privacy, security, and user ownership of
         data.
       </p>
@@ -161,7 +161,7 @@
           <h3 class="text-lg font-semibold mb-4 text-secondary">
             Quick Access to Apps.
           </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
 
             <a href="https://auth.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
               <i class="fas fa-lock mr-2"></i> Auth
@@ -181,6 +181,14 @@
             <a href="https://shogun-linko.vercel.app/" target="_blank" class="btn btn-outline btn-sm">
               <i class="fas fa-link mr-2"></i> Linko
             </a>
+
+                <a href="https://binnu.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fas fa-file-alt mr-2"></i> Binnu
+                </a>
+
+                <a href="https://onon.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fas fa-circle-notch mr-2"></i> Onion
+                </a>
 
           </div>
         </div>
@@ -563,6 +571,27 @@
           </div>
         </div>
 
+        <!-- Onion -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-circle-notch"></i></div>
+            <h4 class="text-xl font-bold mb-2">onion</h4>
+            <p class="text-secondary mb-4">
+              Static webring widget and Ring Explorer for connecting Shogun and community sites, usable via simple HTML/JS or the `shogun-onion` npm package.
+            </p>
+
+            <div class="flex justify-between items-center">
+              <a href="https://onon.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
+                <i class="fas fa-globe"></i> Website
+              </a>
+              <a href="https://github.com/scobru/shogun-onion" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
 
 
         <!-- GYPT -->
@@ -586,6 +615,26 @@
           </div>
         </div>
 
+        <!-- Binnu -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-chart-line"></i></div>
+            <h4 class="text-xl font-bold mb-2">binnu</h4>
+            <p class="text-secondary mb-4">
+              Decentralized P2P pastebin built with React and Gun.js, offering censorship-resistant, encrypted sharing of code and text.
+            </p>
+
+            <div class="flex justify-between items-center">
+              <a href="https://binnu.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
+                <i class="fas fa-globe"></i> Website
+              </a>
+              <a href="https://github.com/scobru/shogun-binnu" target="_blank" class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
 
 
       </div>
@@ -596,24 +645,6 @@
       <!-- Libraries & SDKs -->
       <h4 class="text-xl font-semibold mb-4 mt-8 text-primary">Libraries & SDKs</h4>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <!-- Onion -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-circle-notch"></i></div>
-            <h4 class="text-xl font-bold mb-2">onion</h4>
-            <p class="text-secondary mb-4">
-              Decentralized webring system with portfolio, guestbook, blog, digital garden, and more interconnected apps
-            </p>
-
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-onion" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div class="component-card card">
           <div class="p-6">
             <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-database"></i></div>
@@ -651,6 +682,25 @@
             </div>
             <div class="flex justify-between items-center">
               <a href="https://github.com/scobru/shogun-button-react" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shogun Theme -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-palette"></i></div>
+            <h4 class="text-xl font-bold mb-2">shogun-theme</h4>
+            <p class="text-secondary mb-4">
+              Shared Tailwind and DaisyUI theme configuration for Shogun apps, providing a consistent look and feel across the ecosystem.
+            </p>
+            <div class="text-sm text-secondary mb-4">
+            </div>
+            <div class="flex justify-between items-center">
+              <a href="https://github.com/scobru/shogun-theme" target="_blank"
                 class="text-blue-500 hover:text-blue-400">
                 <i class="fab fa-github"></i> Repository
               </a>
@@ -784,55 +834,56 @@
     </div>
 
     <!-- Experimental Projects -->
-    <h3 class="text-2xl font-semibold mb-6 mt-16">Experimental Projects</h3>
-    <div class="alert alert-warning mb-6">
-      <i class="fas fa-flask mr-2"></i>
-      <span>These projects are experimental and may be unstable or under active development.</span>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      <!-- Ripple Boilerplate -->
-      <div class="component-card card">
-        <div class="p-6">
-          <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-water"></i></div>
-          <h4 class="text-xl font-bold mb-2">ripple boilerplate</h4>
-          <p class="text-secondary mb-4">
-            GunDB boilerplate application built with Ripple framework for
-            reactive decentralized apps
-          </p>
-          <div class="text-sm text-secondary mb-4">
-            <span class="badge bg-orange-100 text-orange-800">Experimental</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <a href="https://github.com/scobru/shogun-ripple-boilerplate" target="_blank"
-              class="text-blue-500 hover:text-blue-400">
-              <i class="fab fa-github"></i> Repository
-            </a>
+    <div class="max-w-7xl mx-auto mt-16">
+      <h3 class="text-2xl font-semibold mb-6">Experimental Projects</h3>
+      <div class="alert alert-warning mb-6">
+        <i class="fas fa-flask mr-2"></i>
+        <span>These projects are experimental and may be unstable or under active development.</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Ripple Boilerplate -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-water"></i></div>
+            <h4 class="text-xl font-bold mb-2">ripple boilerplate</h4>
+            <p class="text-secondary mb-4">
+              GunDB boilerplate application built with Ripple framework for
+              reactive decentralized apps
+            </p>
+            <div class="text-sm text-secondary mb-4">
+              <span class="badge bg-orange-100 text-orange-800">Experimental</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <a href="https://github.com/scobru/shogun-ripple-boilerplate" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Ripple Todos -->
-      <div class="component-card card">
-        <div class="p-6">
-          <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-tasks"></i></div>
-          <h4 class="text-xl font-bold mb-2">ripple todos</h4>
-          <p class="text-secondary mb-4">
-            Decentralized todo app built with Ripple framework and GunDB
-            demonstrating reactive patterns
-          </p>
-          <div class="text-sm text-secondary mb-4">
-            <span class="badge bg-orange-100 text-orange-800">Experimental</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <a href="https://github.com/scobru/shogun-ripple-todos" target="_blank"
-              class="text-blue-500 hover:text-blue-400">
-              <i class="fab fa-github"></i> Repository
-            </a>
+        <!-- Ripple Todos -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-tasks"></i></div>
+            <h4 class="text-xl font-bold mb-2">ripple todos</h4>
+            <p class="text-secondary mb-4">
+              Decentralized todo app built with Ripple framework and GunDB
+              demonstrating reactive patterns
+            </p>
+            <div class="text-sm text-secondary mb-4">
+              <span class="badge bg-orange-100 text-orange-800">Experimental</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <a href="https://github.com/scobru/shogun-ripple-todos" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
     </div>
   </section>
 
