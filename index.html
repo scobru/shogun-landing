@@ -10,116 +10,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="wormhole.css" />
-  <!-- Shogun Onion Widget CSS from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/shogun-onion@0.1.16/onion.css">
-  <!-- Import map for ES modules -->
-  <script type="importmap">
-    {
-      "imports": {
-        "shogun-onion": "https://unpkg.com/shogun-onion@0.1.16/index.js"
-      }
-    }
-  </script>
-  <style>
-    .component-card {
-      transition: all 0.3s ease;
-    }
 
-    .component-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .code-block {
-      background-color: var(--color-card-bg);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      overflow-x: auto;
-    }
-
-    .diagram-block {
-      background-color: var(--color-card-bg);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      overflow-x: auto;
-      font-family: monospace;
-      white-space: pre;
-    }
-
-    /* Footer social icon alignment fix */
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 9999px;
-      transition: box-shadow 0.2s;
-    }
-
-    .footer-social a img {
-      width: 1.25rem;
-      height: 1.25rem;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Make all icons same size and vertically aligned */
-    .footer-social a,
-    .footer-social a i {
-      font-size: 1.75rem !important;
-      line-height: 1.75rem !important;
-    }
-
-    .footer-social a:last-child {
-      border: 1px solid #8882;
-      background: var(--color-base-100, #181825);
-      width: 2.75rem;
-      height: 2.75rem;
-      padding: 0;
-      /* Center vertically with others */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media (max-width: 640px) {
-      .footer-social {
-        gap: 1rem;
-      }
-
-      .footer-social a {
-        width: 2.25rem;
-        height: 2.25rem;
-      }
-
-      .footer-social a,
-      .footer-social a i {
-        font-size: 1.25rem !important;
-        line-height: 1.25rem !important;
-      }
-
-      .footer-social a:last-child {
-        width: 2.25rem;
-        height: 2.25rem;
-      }
-
-      .footer-social a img {
-        width: 1rem;
-        height: 1rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -187,8 +82,20 @@
                   <i class="fas fa-file-alt mr-2"></i> Binnu
                 </a>
 
-                <a href="https://onon.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-                  <i class="fas fa-circle-notch mr-2"></i> Onion
+                <a href="https://mistodon.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fas fa-comments mr-2"></i> Mistodon
+                </a>
+
+                <a href="https://notes.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fas fa-sticky-note mr-2"></i> Notes
+                </a>
+
+                <a href="https://wallet.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fas fa-wallet mr-2"></i> Wallet
+                </a>
+
+                <a href="https://drive.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fas fa-cloud mr-2"></i> Drive
                 </a>
 
           </div>
@@ -572,20 +479,19 @@
           </div>
         </div>
 
-        <!-- Onion -->
+        <!-- Mistodon -->
         <div class="component-card card">
           <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-circle-notch"></i></div>
-            <h4 class="text-xl font-bold mb-2">onion</h4>
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-comments"></i></div>
+            <h4 class="text-xl font-bold mb-2">mistodon</h4>
             <p class="text-secondary mb-4">
-              Static webring widget and Ring Explorer for connecting Shogun and community sites, usable via simple HTML/JS or the `shogun-onion` npm package.
+              Decentralized social network built on GunDB
             </p>
-
             <div class="flex justify-between items-center">
-              <a href="https://onon.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
+              <a href="https://mistodon.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
                 <i class="fas fa-globe"></i> Website
               </a>
-              <a href="https://github.com/scobru/shogun-onion" target="_blank"
+              <a href="https://github.com/scobru/shogun-mistodon" target="_blank"
                 class="text-blue-500 hover:text-blue-400">
                 <i class="fab fa-github"></i> Repository
               </a>
@@ -593,7 +499,65 @@
           </div>
         </div>
 
+        <!-- Notes -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-sticky-note"></i></div>
+            <h4 class="text-xl font-bold mb-2">notes</h4>
+            <p class="text-secondary mb-4">
+              Decentralized note-taking application
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://notes.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
+                <i class="fas fa-globe"></i> Website
+              </a>
+              <a href="https://github.com/scobru/shogun-notes" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Wallet -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-wallet"></i></div>
+            <h4 class="text-xl font-bold mb-2">wallet</h4>
+            <p class="text-secondary mb-4">
+              Decentralized cryptocurrency wallet with multi-chain support
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://wallet.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
+                <i class="fas fa-globe"></i> Website
+              </a>
+              <a href="https://github.com/scobru/wallet" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drive -->
+        <div class="component-card card">
+          <div class="p-6">
+            <div class="text-3xl text-blue-500 mb-4"><i class="fas fa-cloud"></i></div>
+            <h4 class="text-xl font-bold mb-2">drive</h4>
+            <p class="text-secondary mb-4">
+              Decentralized encrypted file storage with IPFS backend, offering Google Drive-like interface with end-to-end encryption
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://drive.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
+                <i class="fas fa-globe"></i> Website
+              </a>
+              <a href="https://github.com/scobru/shogun-drive" target="_blank"
+                class="text-blue-500 hover:text-blue-400">
+                <i class="fab fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
 
         <!-- GYPT -->
         <div class="component-card card">
@@ -977,23 +941,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Shogun Onion Ring Widget -->
-  <div id="shogun-ring"></div>
-
-  <!-- Mount Shogun Onion Widget -->
-  <script type="module">
-    import { mountOnionRing, sitesData } from 'shogun-onion';
-    
-    // Mount the onion ring widget
-    mountOnionRing({
-      ringID: 'shogun-ring',
-      ringName: 'Shogun Network',
-      useIndex: true,
-      useRandom: true,
-      sitesData
-    }).catch((e) => console.error('Failed to mount onion ring:', e));
-  </script>
 
   <!-- Theme toggle script -->
   <script>
