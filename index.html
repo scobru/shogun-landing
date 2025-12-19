@@ -6,23 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
   <title>Shogun - Decentralized Ecosystem</title>
-  <meta name="description" content="Shogun - A comprehensive decentralized Web3 ecosystem built on GunDB, focusing on privacy, security, and user ownership of data. Explore authentication, messaging, and decentralized applications." />
+  <meta name="description"
+    content="Shogun - A comprehensive decentralized Web3 ecosystem built on GunDB, focusing on privacy, security, and user ownership of data. Explore authentication, messaging, and decentralized applications." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     * {
       font-family: 'Google Sans Flex', sans-serif;
     }
-    
+
     body {
       position: relative;
       overflow-x: hidden;
     }
-    
+
     /* Animated Background */
     .animated-bg {
       position: fixed;
@@ -36,19 +38,21 @@
       animation: gradientShift 15s ease infinite;
       opacity: 0.5;
     }
-    
+
     @keyframes gradientShift {
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
     }
-    
+
     /* Animated Particles */
     .particles {
       position: fixed;
@@ -59,33 +63,38 @@
       z-index: -1;
       overflow: hidden;
     }
-    
+
     .particle {
       position: absolute;
       background: rgba(16, 185, 129, 0.1);
       border-radius: 50%;
       animation: float 20s infinite ease-in-out;
     }
-    
+
     @keyframes float {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0) translateX(0) scale(1);
         opacity: 0.3;
       }
+
       25% {
         transform: translateY(-100px) translateX(50px) scale(1.2);
         opacity: 0.5;
       }
+
       50% {
         transform: translateY(-200px) translateX(-50px) scale(0.8);
         opacity: 0.2;
       }
+
       75% {
         transform: translateY(-100px) translateX(100px) scale(1.1);
         opacity: 0.4;
       }
     }
-    
+
     .minimal-card {
       background-color: hsl(var(--b2));
       border: 1px solid hsl(var(--b3));
@@ -93,19 +102,22 @@
       position: relative;
       z-index: 1;
     }
+
     .minimal-card:hover {
       border-color: hsl(var(--b4));
       background-color: hsl(var(--b1));
     }
+
     .minimal-link {
       color: hsl(var(--bc) / 0.6);
       text-decoration: none;
       transition: color 0.2s ease;
     }
+
     .minimal-link:hover {
       color: hsl(var(--bc));
     }
-    
+
     /* Ensure content is above background */
     .min-h-screen {
       position: relative;
@@ -118,22 +130,22 @@
   <!-- Animated Background -->
   <div class="animated-bg"></div>
   <div class="particles" id="particles"></div>
-  
+
   <div class="min-h-screen flex flex-col bg-base-100">
-  <!-- Navbar with Theme Toggle -->
+    <!-- Navbar with Theme Toggle -->
     <nav class="px-6 py-6 sm:px-8 lg:px-12">
       <div class="max-w-6xl mx-auto w-full flex justify-between items-center">
-      <div class="flex items-center">
+        <div class="flex items-center">
           <img src="logo.svg" alt="Shogun Logo" class="w-8 h-8 mr-2" />
           <span class="text-lg font-semibold">Shogun</span>
-      </div>
-      <div>
+        </div>
+        <div>
           <button id="theme-toggle" class="btn btn-circle btn-sm">
-          <i class="fas fa-moon"></i>
-        </button>
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
     <!-- Main Content -->
     <main class="flex-1 px-6 py-12 sm:px-8 lg:px-12">
@@ -150,7 +162,8 @@
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Auth</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Decentralized authentication system built on GunDB. Secure, private, and user-controlled identity management.
+              Decentralized authentication system built on GunDB. Secure, private, and user-controlled identity
+              management.
             </p>
             <div class="flex justify-between items-center">
               <a href="https://auth.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
@@ -159,14 +172,15 @@
               <a href="https://github.com/scobru/shogun-auth-app" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Linda -->
+          <!-- Linda -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Linda</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              A decentralized chat protocol from Shogun. Real-time messaging with end-to-end encryption and offline-first architecture.
+              A decentralized chat protocol from Shogun. Real-time messaging with end-to-end encryption and
+              offline-first architecture.
             </p>
             <div class="flex justify-between items-center">
               <a href="https://linda.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
@@ -175,14 +189,15 @@
               <a href="https://github.com/scobru/shogun-linda" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Wormhole -->
+          <!-- Wormhole -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Wormhole</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Secure P2P file transfer tool built with IPFS and GunDB. End-to-end encrypted file sharing with human-readable codes.
+              Secure P2P file transfer tool built with IPFS and GunDB. End-to-end encrypted file sharing with
+              human-readable codes.
             </p>
             <div class="flex justify-between items-center">
               <a href="https://wormhole.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
@@ -191,14 +206,15 @@
               <a href="https://github.com/scobru/shogun-wormhole" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
           <!-- Drive -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Drive</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Decentralized encrypted file storage with IPFS backend. Google Drive-like interface with end-to-end encryption.
+              Decentralized encrypted file storage with IPFS backend. Google Drive-like interface with end-to-end
+              encryption.
             </p>
             <div class="flex justify-between items-center">
               <a href="https://drive.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
@@ -207,8 +223,8 @@
               <a href="https://github.com/scobru/shogun-drive" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
           <!-- Wallet -->
           <div class="minimal-card rounded-lg p-8">
@@ -223,14 +239,15 @@
               <a href="https://github.com/scobru/wallet" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
           <!-- Mistodon -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Mistodon</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Decentralized social network built on GunDB. Own your content, control your data, connect without intermediaries.
+              Decentralized social network built on GunDB. Own your content, control your data, connect without
+              intermediaries.
             </p>
             <div class="flex justify-between items-center">
               <a href="https://mistodon.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
@@ -239,8 +256,8 @@
               <a href="https://github.com/scobru/shogun-mistodon" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
           <!-- Notes -->
           <div class="minimal-card rounded-lg p-8">
@@ -255,8 +272,8 @@
               <a href="https://github.com/scobru/shogun-notes" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
           <!-- Linko -->
           <div class="minimal-card rounded-lg p-8">
@@ -265,36 +282,38 @@
               Decentralized Linktree-style page builder with GunDB sync. Multilingual support and real-time updates.
             </p>
             <div class="flex justify-between items-center">
-              <a href="https://shogun-linko.vercel.app/" target="_blank" class="minimal-link text-sm">
+              <a href="https://linko.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
                 View Project →
               </a>
               <a href="https://github.com/scobru/shogun-linko" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
-        <!-- GYPT -->
+          <!-- GYPT -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">GYPT</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Geospatial encrypted messaging with location-based cryptography. Private messaging via GunDB SEA with voice and photo support.
+              Geospatial encrypted messaging with location-based cryptography. Private messaging via GunDB SEA with
+              voice and photo support.
             </p>
             <div class="flex justify-between items-center">
-              <a href="https://shogun-gypt.vercel.app/" target="_blank" class="minimal-link text-sm">
+              <a href="https://gypt.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
                 View Project →
               </a>
               <a href="https://github.com/scobru/shogun-gypt" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Binnu -->
+          <!-- Binnu -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Binnu</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Decentralized P2P pastebin built with React and Gun.js. Censorship-resistant, encrypted sharing of code and text.
+              Decentralized P2P pastebin built with React and Gun.js. Censorship-resistant, encrypted sharing of code
+              and text.
             </p>
             <div class="flex justify-between items-center">
               <a href="https://binnu.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
@@ -306,14 +325,15 @@
             </div>
           </div>
 
-        <!-- Scan -->
+          <!-- Scan -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Scan</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              GunDB Network Monitor. Real-time visualization of relay nodes, network health, and mesh connectivity across the globe.
+              GunDB Network Monitor. Real-time visualization of relay nodes, network health, and mesh connectivity
+              across the globe.
             </p>
             <div class="flex justify-between items-center">
-              <a href="https://shogun-scan.vercel.app/" target="_blank" class="minimal-link text-sm">
+              <a href="https://scan.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
                 View Project →
               </a>
               <a href="https://github.com/scobru/shogun-scan" target="_blank" class="minimal-link text-sm">
@@ -322,14 +342,15 @@
             </div>
           </div>
 
-        <!-- Deals -->
+          <!-- Deals -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">Deals</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Decentralized storage deals with on-chain registration. Create per-file contracts with IPFS storage and griefing protection.
+              Decentralized storage deals with on-chain registration. Create per-file contracts with IPFS storage and
+              griefing protection.
             </p>
             <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-deals" target="_blank" class="minimal-link text-sm">
+              <a href="https://deals.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
                 View Project →
               </a>
               <a href="https://github.com/scobru/shogun-deals" target="_blank" class="minimal-link text-sm">
@@ -338,14 +359,15 @@
             </div>
           </div>
 
-        <!-- L2 -->
+          <!-- L2 -->
           <div class="minimal-card rounded-lg p-8">
             <h2 class="text-2xl font-semibold mb-3">L2</h2>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              Trustless ETH bridge between L1 and L2. Deposit, withdraw, and transfer ETH using Merkle proofs and GunDB integration.
+              Trustless ETH bridge between L1 and L2. Deposit, withdraw, and transfer ETH using Merkle proofs and GunDB
+              integration.
             </p>
             <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-l2" target="_blank" class="minimal-link text-sm">
+              <a href="https://l2.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
                 View Project →
               </a>
               <a href="https://github.com/scobru/shogun-l2" target="_blank" class="minimal-link text-sm">
@@ -371,8 +393,8 @@
                 <a href="https://shogun-core-docs.vercel.app/" target="_blank" class="minimal-link text-sm">
                   Docs →
                 </a>
-          </div>
-        </div>
+              </div>
+            </div>
 
             <div class="minimal-card rounded-lg p-6">
               <h3 class="text-xl font-semibold mb-3">Relay</h3>
@@ -382,7 +404,7 @@
               <a href="https://github.com/scobru/shogun-relay" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
-      </div>
+            </div>
 
             <div class="minimal-card rounded-lg p-6">
               <h3 class="text-xl font-semibold mb-3">Contracts</h3>
@@ -396,10 +418,10 @@
                 <a href="https://github.com/scobru/shogun-contracts" target="_blank" class="minimal-link text-sm">
                   Docs →
                 </a>
-          </div>
-        </div>
+              </div>
+            </div>
 
-            
+
           </div>
         </div>
 
@@ -416,15 +438,15 @@
               </div>
             </div>
             <p class="text-secondary mb-6 text-sm leading-relaxed">
-              While other "decentralized" platforms still rely on central servers, GunDB is truly peer-to-peer. 
-              Your data synchronizes directly between users without any middleman. No single point of failure, 
+              While other "decentralized" platforms still rely on central servers, GunDB is truly peer-to-peer.
+              Your data synchronizes directly between users without any middleman. No single point of failure,
               no corporation controlling your information.
             </p>
             <a href="https://gun.eco/" target="_blank" class="minimal-link text-sm">
               Explore GUN Database →
             </a>
+          </div>
         </div>
-      </div>
 
         <!-- Utilities Section -->
         <div class="mt-16 mb-16">
@@ -433,12 +455,13 @@
             <div class="minimal-card rounded-lg p-6">
               <h3 class="text-xl font-semibold mb-3">IPFS</h3>
               <p class="text-secondary mb-4 text-sm">
-                A lightweight wrapper for IPFS storage services that provides a simplified interface for interacting with IPFS networks.
+                A lightweight wrapper for IPFS storage services that provides a simplified interface for interacting
+                with IPFS networks.
               </p>
               <a href="https://github.com/scobru/shogun-ipfs" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
-        </div>
+            </div>
 
             <div class="minimal-card rounded-lg p-6">
               <h3 class="text-xl font-semibold mb-3">button-react</h3>
@@ -448,9 +471,9 @@
               <a href="https://github.com/scobru/shogun-button-react" target="_blank" class="minimal-link text-sm">
                 GitHub →
               </a>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
     </main>
 
     <!-- Footer -->
@@ -473,7 +496,7 @@
         <p class="text-secondary text-xs text-center mt-4">MIT License</p>
       </div>
     </footer>
-    </div>
+  </div>
 
   <!-- Theme toggle script -->
   <script>
@@ -504,28 +527,28 @@
           toggleIcon.className = "fas fa-moon";
         }
       }
-      
+
       // Generate animated particles
       const particlesContainer = document.getElementById("particles");
       const particleCount = 30;
-      
+
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement("div");
         particle.className = "particle";
-        
+
         const size = Math.random() * 4 + 2;
         const startX = Math.random() * 100;
         const startY = Math.random() * 100;
         const delay = Math.random() * 20;
         const duration = 15 + Math.random() * 10;
-        
+
         particle.style.width = size + "px";
         particle.style.height = size + "px";
         particle.style.left = startX + "%";
         particle.style.top = startY + "%";
         particle.style.animationDelay = delay + "s";
         particle.style.animationDuration = duration + "s";
-        
+
         particlesContainer.appendChild(particle);
       }
     });
