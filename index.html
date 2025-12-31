@@ -4,1016 +4,499 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🥷 Shogun - Decentralized Web3 Ecosystem</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <title>Shogun - Decentralized Ecosystem</title>
+  <meta name="description"
+    content="Shogun - A comprehensive decentralized Web3 ecosystem built on GunDB, focusing on privacy, security, and user ownership of data. Explore authentication, messaging, and decentralized applications." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="wormhole.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
-    .component-card {
-      transition: all 0.3s ease;
+    * {
+      font-family: 'Google Sans Flex', sans-serif;
     }
 
-    .component-card:hover {
-      transform: translateY(-5px);
+    body {
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .code-block {
-      background-color: var(--color-card-bg);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      overflow-x: auto;
+    /* Animated Background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(-45deg, #0a0a0a, #1a0a1a, #0a1a1a, #1a1a0a);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      opacity: 0.5;
     }
 
-    .diagram-block {
-      background-color: var(--color-card-bg);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      overflow-x: auto;
-      font-family: monospace;
-      white-space: pre;
-    }
-
-    /* Footer social icon alignment fix */
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 9999px;
-      transition: box-shadow 0.2s;
-    }
-
-    .footer-social a img {
-      width: 1.25rem;
-      height: 1.25rem;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Make all icons same size and vertically aligned */
-    .footer-social a,
-    .footer-social a i {
-      font-size: 1.75rem !important;
-      line-height: 1.75rem !important;
-    }
-
-    .footer-social a:last-child {
-      border: 1px solid #8882;
-      background: var(--color-base-100, #181825);
-      width: 2.75rem;
-      height: 2.75rem;
-      padding: 0;
-      /* Center vertically with others */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media (max-width: 640px) {
-      .footer-social {
-        gap: 1rem;
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
       }
 
-      .footer-social a {
-        width: 2.25rem;
-        height: 2.25rem;
+      50% {
+        background-position: 100% 50%;
       }
 
-      .footer-social a,
-      .footer-social a i {
-        font-size: 1.25rem !important;
-        line-height: 1.25rem !important;
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Animated Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 50%;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.3;
       }
 
-      .footer-social a:last-child {
-        width: 2.25rem;
-        height: 2.25rem;
+      25% {
+        transform: translateY(-100px) translateX(50px) scale(1.2);
+        opacity: 0.5;
       }
 
-      .footer-social a img {
-        width: 1rem;
-        height: 1rem;
+      50% {
+        transform: translateY(-200px) translateX(-50px) scale(0.8);
+        opacity: 0.2;
       }
+
+      75% {
+        transform: translateY(-100px) translateX(100px) scale(1.1);
+        opacity: 0.4;
+      }
+    }
+
+    .minimal-card {
+      background-color: hsl(var(--b2));
+      border: 1px solid hsl(var(--b3));
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .minimal-card:hover {
+      border-color: hsl(var(--b4));
+      background-color: hsl(var(--b1));
+    }
+
+    .minimal-link {
+      color: hsl(var(--bc) / 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .minimal-link:hover {
+      color: hsl(var(--bc));
+    }
+
+    /* Ensure content is above background */
+    .min-h-screen {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 
 <body>
-  <!-- Navbar with Theme Toggle -->
-  <nav class="navbar px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
-      <div class="flex items-center">
-        <img src="logo.svg" alt="Shogun Logo" class="w-10 h-10 mr-2" />
-        <span class="text-xl font-bold">Shogun</span>
-      </div>
-      <div>
-        <button id="theme-toggle" class="btn btn-circle">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  <div class="particles" id="particles"></div>
 
-  <!-- Header Section -->
-  <header class="py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto text-center">
-      <div class="flex justify-center mb-6">
-        <img src="logo.svg" alt="Shogun Logo" class="w-24 h-24" />
-      </div>
-      <h1 class="text-5xl font-extrabold tracking-tight mb-4">Shogun</h1>
-      <p class="text-2xl max-w-3xl mx-auto">Decentralized Ecosystem</p>
-      <p class="mt-6 text-xl text-secondary max-w-3xl mx-auto">
-        A comprehensive toolkit for developing decentralized Web3
-        applications, focusing on privacy, security, and user ownership of
-        data.
-      </p>
-      <div class="mt-10">
-        <a href="https://github.com/scobru/shogun-core" target="_blank" class="btn btn-primary mx-2 mb-4">
-          <i class="fab fa-github mr-2"></i> GitHub
-        </a>
-        <a href="#components" class="btn mx-2 mb-4"> Explore Components </a>
-
-        <!-- App Links -->
-        <div class="mt-8">
-          <h3 class="text-lg font-semibold mb-4 text-secondary">Quick Access to Apps</h3>
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-            <a href="https://relay.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-network-wired mr-2"></i> Relay
-            </a>
-            <a href="https://auth.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-lock mr-2"></i> Auth
-            </a>
-            <a href="https://dweb.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-globe mr-2"></i> DWeb
-            </a>
-            <a href="https://nobackend.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-tools mr-2"></i> NoBackend
-            </a>
-            <a href="https://github.com/scobru/shogun-mule" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-download mr-2"></i> Mule
-            </a>
-            <a href="https://wallet.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-wallet mr-2"></i> Wallet
-            </a>
-            <a href="https://linda.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-envelope mr-2"></i> Linda
-            </a>
-            <a href="https://d2.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-comments mr-2"></i> D2
-            </a>
-            <a href="https://d3.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-comment mr-2"></i> D3
-            </a>
-            <a href="https://task.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-tasks mr-2"></i> Tasks
-            </a>
-            <a href="https://wall.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-comment mr-2"></i> Wall
-            </a>
-            <a href="https://eph.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-envelope mr-2"></i> EPH
-            </a>
-            <a href="https://girc.shogun-eco.xyz/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-comments mr-2"></i> gIRC
-            </a>
-            <a href="https://theswanstation.vercel.app/" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fas fa-clock mr-2"></i> Swan Station
-            </a>
-          </div>
+  <div class="min-h-screen flex flex-col bg-base-100">
+    <!-- Navbar with Theme Toggle -->
+    <nav class="px-6 py-6 sm:px-8 lg:px-12">
+      <div class="max-w-6xl mx-auto w-full flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="logo.svg" alt="Shogun Logo" class="w-8 h-8 mr-2" />
+          <span class="text-lg font-semibold">Shogun</span>
+        </div>
+        <div>
+          <button id="theme-toggle" class="btn btn-circle btn-sm">
+            <i class="fas fa-moon"></i>
+          </button>
         </div>
       </div>
-    </div>
-  </header>
+    </nav>
 
-  <!-- Manifesto Section -->
-  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-base-200">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold mb-6">Why We Built Shogun</h2>
-        <p class="text-xl text-secondary">Bringing back the original promise of the internet</p>
-      </div>
+    <!-- Main Content -->
+    <main class="flex-1 px-6 py-12 sm:px-8 lg:px-12">
+      <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-20">
+          <h1 class="text-6xl sm:text-7xl font-bold mb-4 tracking-tight">Shogun</h1>
+          <p class="text-2xl sm:text-3xl font-light text-secondary">decentralized ecosystem</p>
+        </div>
 
-      <div class="space-y-12">
-        <!-- Main narrative -->
-        <div class="prose prose-lg max-w-none">
-          <div class="bg-base-100 rounded-lg p-8 shadow-lg">
-            <p class="text-lg leading-relaxed mb-6">
-              The internet started with a beautiful idea: <strong>connect everyone, democratize information, give
-                everyone a voice</strong>.
-              For a while, it felt like we were getting there.
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <!-- Auth -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Auth</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized authentication system built on GunDB. Secure, private, and user-controlled identity
+              management.
             </p>
-            <p class="text-lg leading-relaxed mb-6">
-              But somewhere along the way, we traded convenience for control. A handful of platforms became the
-              gatekeepers
-              of digital communication, and our data became their business model. What was supposed to be
-              decentralized became more centralized than ever.
-            </p>
-            <p class="text-lg leading-relaxed">
-              <strong>We think it's time to get back to the original vision.</strong>
-            </p>
-          </div>
-        </div>
-
-        <!-- What we're building -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-base-100 rounded-lg p-6 shadow-lg border-l-4 border-success">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
-              <span class="mr-3">🌱</span> What We're Building
-            </h3>
-            <ul class="space-y-3 text-secondary">
-              <li>• Tools that work without intermediaries</li>
-              <li>• Networks resilient to censorship and outages</li>
-              <li>• Applications where users own their data</li>
-              <li>• Real privacy, not just promises</li>
-              <li>• Open source everything, no black boxes</li>
-            </ul>
-          </div>
-
-          <div class="bg-base-100 rounded-lg p-6 shadow-lg border-l-4 border-warning">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
-              <span class="mr-3">⚠️</span> What We Avoid
-            </h3>
-            <ul class="space-y-3 text-secondary">
-              <li>• "Decentralized" solutions that depend on AWS</li>
-              <li>• Privacy policies you need a lawyer to understand</li>
-              <li>• Token economies designed to enrich founders</li>
-              <li>• Platforms that change rules overnight</li>
-              <li>• Surveillance disguised as personalization</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- The current reality -->
-        <div class="bg-gradient-to-r from-info/20 to-primary/20 rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-6 text-center">The Current State of Things</h3>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-sm">
-            <div class="text-center">
-              <div class="text-3xl mb-3">📱</div>
-              <p><strong>Your devices</strong> collect thousands of data points about you daily, often without clear
-                consent or understanding of how it's used.</p>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl mb-3">🏢</div>
-              <p><strong>Major platforms</strong> have become digital town squares, but they're privately owned with
-                rules that can change without notice.</p>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl mb-3">🔄</div>
-              <p><strong>Your content</strong> and connections are locked into silos, making it hard to switch platforms
-                or truly own your digital presence.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Our principles -->
-        <div class="bg-base-100 rounded-lg p-8 shadow-lg">
-          <h3 class="text-2xl font-bold mb-6 text-center">Our Approach</h3>
-          <div class="space-y-6">
-            <div class="flex items-start space-x-4">
-              <span class="text-2xl">🔍</span>
-              <div>
-                <h4 class="font-bold text-lg">Radical Transparency</h4>
-                <p class="text-secondary">Every line of code is open source. Every design decision is documented. No
-                  hidden algorithms or secret data collection.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <span class="text-2xl">🤝</span>
-              <div>
-                <h4 class="font-bold text-lg">Community-Driven</h4>
-                <p class="text-secondary">This isn't a venture-funded startup racing to an exit. It's a collaborative
-                  effort to build tools that serve users, not shareholders.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <span class="text-2xl">⚡</span>
-              <div>
-                <h4 class="font-bold text-lg">Practical Solutions</h4>
-                <p class="text-secondary">We focus on building tools that work today, are easy to use, and solve real
-                  problems without requiring a PhD in cryptography.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="text-center">
-          <div class="bg-gradient-to-r from-primary to-accent rounded-lg p-8 text-primary-content">
-            <h3 class="text-3xl font-bold mb-4">Ready to Reclaim the Web?</h3>
-            <p class="text-lg mb-6">
-              Join us in building the internet we actually want—one that serves people, not profits.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://github.com/scobru/shogun-core" target="_blank" class="btn btn-neutral">
-                <i class="fab fa-github mr-2"></i> Explore the Code
+            <div class="flex justify-between items-center">
+              <a href="https://auth.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
               </a>
-              <a href="#components" class="btn btn-outline btn-neutral">
-                <i class="fas fa-tools mr-2"></i> See the Tools
+              <a href="https://github.com/scobru/shogun-auth-app" target="_blank" class="minimal-link text-sm">
+                GitHub →
               </a>
             </div>
-            <p class="text-sm mt-4 opacity-80">
-              Open source, community-driven, and built for the long term.
+          </div>
+
+          <!-- Linda -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Linda</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              A decentralized chat protocol from Shogun. Real-time messaging with end-to-end encryption and
+              offline-first architecture.
             </p>
+            <div class="flex justify-between items-center">
+              <a href="https://linda.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-linda" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Wormhole -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Wormhole</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Secure P2P file transfer tool built with IPFS and GunDB. End-to-end encrypted file sharing with
+              human-readable codes.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://wormhole.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-wormhole" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Drive -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Drive</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized encrypted file storage with IPFS backend. Google Drive-like interface with end-to-end
+              encryption.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://drive.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-drive" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Wallet -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Wallet</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized cryptocurrency wallet with multi-chain support. Full control over your digital assets.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://wallet.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/wallet" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Mistodon -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Mistodon</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized social network built on GunDB. Own your content, control your data, connect without
+              intermediaries.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://mistodon.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-mistodon" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Notes</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized note-taking application. Your thoughts, encrypted and synced across devices.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://notes.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-notes" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Linko -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Linko</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized Linktree-style page builder with GunDB sync. Multilingual support and real-time updates.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://linko.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-linko" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- GYPT -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">GYPT</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Geospatial encrypted messaging with location-based cryptography. Private messaging via GunDB SEA with
+              voice and photo support.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://gypt.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-gypt" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Binnu -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Binnu</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized P2P pastebin built with React and Gun.js. Censorship-resistant, encrypted sharing of code
+              and text.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://binnu.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-binnu" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Scan -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Scan</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              GunDB Network Monitor. Real-time visualization of relay nodes, network health, and mesh connectivity
+              across the globe.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://scan.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-scan" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Deals -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">Deals</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Decentralized storage deals with on-chain registration. Create per-file contracts with IPFS storage and
+              griefing protection.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://deals.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-deals" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- L2 -->
+          <div class="minimal-card rounded-lg p-8">
+            <h2 class="text-2xl font-semibold mb-3">L2</h2>
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              Trustless ETH bridge between L1 and L2. Deposit, withdraw, and transfer ETH using Merkle proofs and GunDB
+              integration.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://l2.shogun-eco.xyz/" target="_blank" class="minimal-link text-sm">
+                View Project →
+              </a>
+              <a href="https://github.com/scobru/shogun-l2" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Built on GunDB Section -->
-  <section class="py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Build with GunDB</h2>
-        <p class="text-xl text-secondary">The decentralized database that makes it all possible</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Left side - Visual -->
-        <div class="text-center lg:text-left">
-          <div class="flex justify-center lg:justify-start items-center mb-6">
-            <div class="bg-white rounded-lg p-4 mr-4 shadow-lg">
-              <img src="gun.png" alt="GUN Database Logo" class="w-16 h-16 object-contain" />
-            </div>
-            <div>
-              <h3 class="text-4xl font-bold">GUN</h3>
-              <p class="text-secondary">Decentralized Database</p>
-            </div>
-          </div>
-
-          <div class="space-y-4 mb-8">
-            <div class="flex items-center justify-center lg:justify-start">
-              <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-              <span>Real-time peer-to-peer synchronization</span>
-            </div>
-            <div class="flex items-center justify-center lg:justify-start">
-              <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-              <span>Offline-first with automatic conflict resolution</span>
-            </div>
-            <div class="flex items-center justify-center lg:justify-start">
-              <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-              <span>End-to-end encrypted by default</span>
-            </div>
-            <div class="flex items-center justify-center lg:justify-start">
-              <div class="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-              <span>Works in browsers, Node.js, and mobile</span>
-            </div>
-          </div>
-
-          <a href="https://gun.eco/" target="_blank" class="btn btn-primary">
-            <i class="fas fa-external-link-alt mr-2"></i> Explore GUN Database
-          </a>
-        </div>
-
-        <!-- Right side - Content -->
-        <div class="space-y-6">
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h4 class="text-xl font-bold mb-3 flex items-center">
-                <span class="text-2xl mr-3">🔗</span> Why GunDB?
-              </h4>
-              <p class="text-secondary">
-                While other "decentralized" platforms still rely on central servers, GunDB is truly peer-to-peer.
-                Your data synchronizes directly between users without any middleman. No single point of failure,
-                no corporation controlling your information.
+        <!-- Core Section -->
+        <div class="mt-24 mb-16">
+          <h2 class="text-3xl font-semibold mb-8 text-center">Core</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="minimal-card rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-3">Core</h3>
+              <p class="text-secondary mb-4 text-sm">
+                The foundation of the ecosystem with decentralized authentication, distributed storage, and security.
               </p>
+              <div class="flex gap-4">
+                <a href="https://github.com/scobru/shogun-core" target="_blank" class="minimal-link text-sm">
+                  GitHub →
+                </a>
+                <a href="https://shogun-core-docs.vercel.app/" target="_blank" class="minimal-link text-sm">
+                  Docs →
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h4 class="text-xl font-bold mb-3 flex items-center">
-                <span class="text-2xl mr-3">⚡</span> Real-time Everything
-              </h4>
-              <p class="text-secondary">
-                Changes propagate instantly across all connected peers. Whether you're building a chat app,
-                collaborative editor, or social network, users see updates in real-time without polling servers
-                or managing WebSocket connections.
+            <div class="minimal-card rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-3">Relay</h3>
+              <p class="text-secondary mb-4 text-sm">
+                Relay server for the Shogun network, facilitating communication between decentralized nodes using GunDB.
               </p>
+              <a href="https://github.com/scobru/shogun-relay" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
             </div>
-          </div>
 
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h4 class="text-xl font-bold mb-3 flex items-center">
-                <span class="text-2xl mr-3">🛡️</span> Security by Design
-              </h4>
-              <p class="text-secondary">
-                Every piece of data is cryptographically signed and can be encrypted. Users control their own
-                keys, and the network verifies authenticity without trusting central authorities.
-                Your data is yours, period.
+            <div class="minimal-card rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-3">Contracts</h3>
+              <p class="text-secondary mb-4 text-sm">
+                Smart contracts for relay registry, storage deals, stealth addresses, and L2 bridge functionality.
               </p>
+              <div class="flex gap-4">
+                <a href="https://github.com/scobru/shogun-contracts" target="_blank" class="minimal-link text-sm">
+                  GitHub →
+                </a>
+                <a href="https://github.com/scobru/shogun-contracts" target="_blank" class="minimal-link text-sm">
+                  Docs →
+                </a>
+              </div>
             </div>
+
+
           </div>
         </div>
-      </div>
 
-      <!-- Bottom stats -->
-      <div class="mt-16">
-        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div class="text-3xl font-bold text-primary mb-2">100%</div>
-              <div class="text-secondary">Peer-to-Peer</div>
-              <div class="text-sm text-secondary mt-1">No central servers required</div>
+        <!-- GunDB Section -->
+        <div class="mt-24 mb-16">
+          <div class="minimal-card rounded-lg p-8">
+            <div class="flex items-center mb-6">
+              <div class="bg-base-200 rounded-lg p-4 mr-4">
+                <img src="gun.png" alt="GUN Database Logo" class="w-12 h-12 object-contain" />
+              </div>
+              <div>
+                <h2 class="text-3xl font-semibold">GUN</h2>
+                <p class="text-secondary">Decentralized Database</p>
+              </div>
             </div>
-            <div>
-              <div class="text-3xl font-bold text-primary mb-2">∞</div>
-              <div class="text-secondary">Scalability</div>
-              <div class="text-sm text-secondary mt-1">Network grows with users</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-primary mb-2">0ms</div>
-              <div class="text-secondary">Latency</div>
-              <div class="text-sm text-secondary mt-1">Local-first architecture</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Components Section -->
-  <section id="components" class="py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold mb-12 text-center">
-        Ecosystem Components
-      </h2>
-
-      <!-- Core Components -->
-      <h3 class="text-2xl font-semibold mb-6">Core Components</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📦</div>
-            <h4 class="text-xl font-bold mb-2">core</h4>
-            <p class="text-secondary mb-4">
-              The core of the ecosystem with decentralized authentication,
-              distributed storage with GunDB, wallet management, and security.
+            <p class="text-secondary mb-6 text-sm leading-relaxed">
+              While other "decentralized" platforms still rely on central servers, GunDB is truly peer-to-peer.
+              Your data synchronizes directly between users without any middleman. No single point of failure,
+              no corporation controlling your information.
             </p>
-            <span class="badge bg-success text-yellow-800 my-4">Stable</span>
-
-            <div class="flex justify-between items-center gap-3">
-              <a href="https://github.com/scobru/shogun-core" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-              <a href="https://deepwiki.com/scobru/shogun-core" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-tablet-alt"></i> Wiki
-              </a>
-              <a href="https://shogun-core-docs.vercel.app/" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-book"></i> Full Docs
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📡</div>
-            <h4 class="text-xl font-bold mb-2">relay</h4>
-            <p class="text-secondary mb-4">
-              Relay server for the Shogun network, facilitating communication
-              between decentralized nodes using GunDB.
-            </p>
-            <span class="badge bg-success text-yellow-800 my-4">Stable</span>
-            <div class="flex justify-between items-center gap-3">
-              <a href="https://relay.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-relay" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-              <a href="https://deepwiki.com/scobru/shogun-relay" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-tablet-alt"></i> Wiki
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📝</div>
-            <h4 class="text-xl font-bold mb-2">
-              contracts
-            </h4>
-            <p class="text-secondary mb-4">
-              Ethereum smart contracts used in the Shogun ecosystem for
-              blockchain functionalities.
-            </p>
-            <span class="badge bg-error my-4">Beta</span>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-contracts" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plugins -->
-      <h3 class="text-2xl font-semibold mb-6">Plugins</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🥷</div>
-            <h4 class="text-xl font-bold mb-2">stealth address</h4>
-            <p class="text-secondary mb-4">
-              A plugin for the Shogun ecosystem that allows users to create and manage stealth addresses.
-            </p>
-            <span class="badge bg-yellow-100 text-yellow-800 my-4">Beta</span>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-stealth-address-plugin" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📒</div>
-            <h4 class="text-xl font-bold mb-2">BIP44</h4>
-            <p class="text-secondary mb-4">
-              A plugin for the Shogun ecosystem that allows users to create and manage BIP44 addresses.
-            </p>
-            <span class="badge bg-yellow-100 text-yellow-800 my-4">Beta</span>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-BIP44-plugin" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">💬</div>
-            <h4 class="text-xl font-bold mb-2">messages</h4>
-            <p class="text-secondary mb-4">
-              A plugin for the Shogun ecosystem that allows users to create and manage messages.
-            </p>
-            <span class="badge bg-yellow-100 text-yellow-800 my-4">Beta</span>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-message-plugin" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Applications -->
-      <h3 class="text-2xl font-semibold mb-6">Applications </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <!-- Auth -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🔒</div>
-            <h4 class="text-xl font-bold mb-2">auth</h4>
-            <p class="text-secondary mb-4">Decentralized Authentication</p>
-            <div class="text-sm text-secondary mb-4">
-              <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://auth.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-auth-app" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- D2 -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🗨️</div>
-            <h4 class="text-xl font-bold mb-2">d2</h4>
-            <p class="text-secondary mb-4"> A secure, decentralized networking layer built on top of Bugout with
-              enhanced encryption and peer-to-peer communication features.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <a href="https://d2.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-d2-app" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- D3 -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">💬</div>
-            <h4 class="text-xl font-bold mb-2">d3</h4>
-            <p class="text-secondary mb-4"> Decentralized Messaging for Ethereum ⏳
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800 my-4">Beta</span>
-
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://d3.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-d3-app" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Shogun Mule -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">⬇️</div>
-            <h4 class="text-xl font-bold mb-2">mule</h4>
-            <p class="text-secondary mb-4">Desktop P2P file sharing application (eMule-style) for the Shogun network.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Beta</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-mule" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- DWeb Gateway -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🌐</div>
-            <h4 class="text-xl font-bold mb-2">dweb gateway</h4>
-            <p class="text-secondary mb-4">Decentralized web publishing platform. Host HTML sites on GunDB instantly.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://dweb.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-dweb-gateway" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📨</div>
-            <h4 class="text-xl font-bold mb-2">linda</h4>
-            <p class="text-secondary mb-4">A decentralized chat protocol from Shogun</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Beta</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://linda.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-linda" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- EPH -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📨</div>
-            <h4 class="text-xl font-bold mb-2">eph</h4>
-            <p class="text-secondary mb-4">Ephemeral messaging based on GunDB</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://eph.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-eph" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GIRC -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">📨</div>
-            <h4 class="text-xl font-bold mb-2">gIRC</h4>
-            <p class="text-secondary mb-4">IRC style client based on GunDB</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://girc.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-girc" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tasks -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">✅</div>
-            <h4 class="text-xl font-bold mb-2">tasks</h4>
-            <p class="text-secondary mb-4">Task management application based on Shogun, demonstrating the use
-              of the ecosystem.</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Beta</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-task-app" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Wallet -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">💰</div>
-            <h4 class="text-xl font-bold mb-2">wallet</h4>
-            <p class="text-secondary mb-4">Wallet application for managing crypto assets, integrated with the
-              Shogun ecosystem.</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Beta</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://wallet.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-wallet-app" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Wall -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🖋️</div>
-            <h4 class="text-xl font-bold mb-2">wall</h4>
-            <p class="text-secondary mb-4">Decentralized social media platform</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://wall.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun-wall-app" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Swan Station -->
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">⏰</div>
-            <h4 class="text-xl font-bold mb-2">swan station</h4>
-            <p class="text-secondary mb-4">Multiplayer simulation of the Swan Station from Lost TV series</p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-yellow-100 text-yellow-800">Beta</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://theswanstation.vercel.app/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/the-swan-station" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Utility and UI -->
-      <h3 class="text-2xl font-semibold mb-6">Utility and UI</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🏓</div>
-            <h4 class="text-xl font-bold mb-2">ipfs</h4>
-            <p class="text-secondary mb-4">
-              A lightweight wrapper for IPFS storage services that provides a
-              simplified interface for interacting with IPFS networks.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-ipfs" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🔢</div>
-            <h4 class="text-xl font-bold mb-2">derive</h4>
-            <p class="text-secondary mb-4">
-              A lightweight cryptographic key derivation library for the Shogun SDK ecosystem. This library provides
-              deterministic key derivation from passwords or seed data, supporting multiple cryptographic standards.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-derive" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🔘</div>
-            <h4 class="text-xl font-bold mb-2">button-react</h4>
-            <p class="text-secondary mb-4">
-              React components to facilitate Shogun authentication integration
-              into applications.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://github.com/scobru/shogun-button-react" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="component-card card">
-          <div class="p-6">
-            <div class="text-3xl text-blue-500 mb-4">🧰</div>
-            <h4 class="text-xl font-bold mb-2">nobackend</h4>
-            <p class="text-secondary mb-4">
-              A suite of 14 minimalist, serverless web tools that live entirely in your URL hash. Zero backend, 100%
-              private.
-            </p>
-            <div class="text-sm text-secondary mb-4"> <span class="badge bg-success text-yellow-800">Stable</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <a href="https://nobackend.shogun-eco.xyz/" target="_blank" class="text-blue-500 hover:text-blue-400">
-                <i class="fas fa-globe"></i> Website
-              </a>
-              <a href="https://github.com/scobru/shogun/tree/master/textarea" target="_blank"
-                class="text-blue-500 hover:text-blue-400">
-                <i class="fab fa-github"></i> Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="component-card card">
-                    <div class="p-6">
-                        <div class="text-3xl text-blue-500 mb-4">📋</div>
-                        <h4 class="text-xl font-bold mb-2">shogun-panpot</h4>
-                        <p class="text-secondary mb-4">P2P messaging system based on Bugout and GunDB for communication
-                            via WebRTC.</p>
-                        <div class="text-sm text-secondary mb-4">JavaScript, HTML/CSS, Bugout, GunDB, WebRTC</div>
-                        <div class="flex justify-between items-center">
-                            <span
-                                class="badge bg-yellow-100 text-yellow-800">Beta</span>
-                            <a href="https://github.com/scobru/shogun-panpot" target="_blank"
-                                class="text-blue-500 hover:text-blue-400">
-                                <i class="fab fa-github"></i> Repository
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Support Section -->
-  <section class="py-16 px-4 sm:px-6 lg:px-8 bg-base-200">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Support the Project</h2>
-      <p class="text-xl text-secondary mb-8">
-        If you find Shogun useful, consider supporting its development
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <!-- Buy Me a Coffee -->
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
-            <div class="text-4xl mb-4">☕</div>
-            <h3 class="text-xl font-bold mb-2">Buy Me a Coffee</h3>
-            <p class="text-secondary mb-4">Support with a one-time donation</p>
-            <a href="https://buymeacoffee.com/scobru" target="_blank" class="btn btn-primary">
-              <i class="fas fa-coffee mr-2"></i> Support
+            <a href="https://gun.eco/" target="_blank" class="minimal-link text-sm">
+              Explore GUN Database →
             </a>
           </div>
         </div>
 
-        <!-- Cryptocurrency -->
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
-            <div class="text-4xl mb-4">💎</div>
-            <h3 class="text-xl font-bold mb-2">Cryptocurrency</h3>
-            <p class="text-secondary mb-4">Direct crypto donations</p>
-            <div class="space-y-2 text-left">
-              <div class="flex items-center justify-between">
-                <span class="font-mono text-sm">ETH:</span>
-                <button onclick="copyToClipboard('0xA6591dCDff5C7616110b4f84207184aef7835048')"
-                  class="btn btn-sm btn-outline">
-                  <i class="fas fa-copy mr-1"></i> Copy
-                </button>
-              </div>
-              <div class="text-xs font-mono text-secondary break-all">
-                0xA6591dCDff5C7616110b4f84207184aef7835048
-              </div>
-              <div class="flex items-center justify-between mt-3">
-                <span class="font-mono text-sm">BTC:</span>
-                <button onclick="copyToClipboard('bc1q47j2va60zk3fsmp5wwagdj36qqkja5epv8v2tz')"
-                  class="btn btn-sm btn-outline">
-                  <i class="fas fa-copy mr-1"></i> Copy
-                </button>
-              </div>
-              <div class="text-xs font-mono text-secondary break-all">
-                bc1q47j2va60zk3fsmp5wwagdj36qqkja5epv8v2tz
-              </div>
+        <!-- Utilities Section -->
+        <div class="mt-16 mb-16">
+          <h2 class="text-3xl font-semibold mb-8 text-center">Utilities</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="minimal-card rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-3">IPFS</h3>
+              <p class="text-secondary mb-4 text-sm">
+                A lightweight wrapper for IPFS storage services that provides a simplified interface for interacting
+                with IPFS networks.
+              </p>
+              <a href="https://github.com/scobru/shogun-ipfs" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
+            </div>
+
+            <div class="minimal-card rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-3">button-react</h3>
+              <p class="text-secondary mb-4 text-sm">
+                React components to facilitate Shogun authentication integration into applications.
+              </p>
+              <a href="https://github.com/scobru/shogun-button-react" target="_blank" class="minimal-link text-sm">
+                GitHub →
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- Footer -->
-  <footer class="py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto text-center">
-      <p class="text-secondary mb-4">
-        build with ❤️ by
-        <a href="https://github.com/scobru" class="text-blue-500 hover:text-blue-400">scobru</a>
-      </p>
-      <p class="text-secondary">MIT License</p>
-
-      <div class="mt-8 flex justify-center space-x-6">
-        <a href="https://github.com/scobru/shogun-core" target="_blank" rel="noopener noreferrer"
-          class="text-secondary hover:text-blue-400 transition-colors duration-200 w-10 h-10 rounded-full border border-gray-400 bg-base-100 inline-flex items-center justify-center"
-          title="GitHub Repository">
-          <i class="fab fa-github text-xl"></i>
-        </a>
-        <a href="https://t.me/shogun_eco" target="_blank" rel="noopener noreferrer"
-          class="text-secondary hover:text-blue-400 transition-colors duration-200 w-10 h-10 rounded-full border border-gray-400 bg-base-100 inline-flex items-center justify-center"
-          title="Telegram Community">
-          <i class="fab fa-telegram text-xl"></i>
-        </a>
-        <a href="https://linda.shogun-eco.xyz/room/public/shogun-eco" target="_blank" rel="noopener noreferrer"
-          class="text-secondary hover:text-blue-400 transition-colors duration-200 w-10 h-10 rounded-full border border-gray-400 bg-base-100 inline-flex items-center justify-center"
-          title="Linda Chat">
-          <img src="logo.svg" alt="Shogun Logo" class="w-24 h-24" />
-        </a>
+    <!-- Footer -->
+    <footer class="px-6 py-8 sm:px-8 lg:px-12 border-t border-base-300">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-secondary text-sm">
+            Built with <span class="text-red-500">♥</span> by
+            <a href="https://github.com/scobru" target="_blank" class="minimal-link">scobru</a>
+          </p>
+          <div class="flex gap-6">
+            <a href="https://github.com/scobru/shogun-core" target="_blank" class="minimal-link text-sm">
+              GitHub
+            </a>
+            <a href="https://t.me/shogun_eco" target="_blank" class="minimal-link text-sm">
+              Telegram
+            </a>
+          </div>
+        </div>
+        <p class="text-secondary text-xs text-center mt-4">MIT License</p>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <!-- Theme toggle script -->
   <script>
@@ -1045,46 +528,28 @@
         }
       }
 
-      // Copy to clipboard function for crypto addresses
-      async function copyToClipboard(text) {
-        try {
-          await navigator.clipboard.writeText(text);
-          // Show a temporary success message
-          const button = event.target;
-          const originalText = button.innerHTML;
-          button.innerHTML = '<i class="fas fa-check mr-1"></i> Copied!';
-          button.classList.add('btn-success');
-          button.classList.remove('btn-outline');
+      // Generate animated particles
+      const particlesContainer = document.getElementById("particles");
+      const particleCount = 30;
 
-          setTimeout(() => {
-            button.innerHTML = originalText;
-            button.classList.remove('btn-success');
-            button.classList.add('btn-outline');
-          }, 2000);
-        } catch (err) {
-          // Fallback for older browsers
-          const textArea = document.createElement('textarea');
-          textArea.value = text;
-          document.body.appendChild(textArea);
-          textArea.select();
-          try {
-            document.execCommand('copy');
-            const button = event.target;
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-check mr-1"></i> Copied!';
-            button.classList.add('btn-success');
-            button.classList.remove('btn-outline');
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
 
-            setTimeout(() => {
-              button.innerHTML = originalText;
-              button.classList.remove('btn-success');
-              button.classList.add('btn-outline');
-            }, 2000);
-          } catch (fallbackErr) {
-            console.error('Failed to copy:', fallbackErr);
-          }
-          document.body.removeChild(textArea);
-        }
+        const size = Math.random() * 4 + 2;
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        const delay = Math.random() * 20;
+        const duration = 15 + Math.random() * 10;
+
+        particle.style.width = size + "px";
+        particle.style.height = size + "px";
+        particle.style.left = startX + "%";
+        particle.style.top = startY + "%";
+        particle.style.animationDelay = delay + "s";
+        particle.style.animationDuration = duration + "s";
+
+        particlesContainer.appendChild(particle);
       }
     });
   </script>
