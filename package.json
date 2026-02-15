@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "This is the landing page for the Shogun project and its ecosystem of decentralized applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "html-validate index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scobru/shogun-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/scobru/shogun-landing/issues"
+  },
+  "homepage": "https://github.com/scobru/shogun-landing#readme",
+  "devDependencies": {
+    "html-validate": "^10.7.0"
+  }
+}
