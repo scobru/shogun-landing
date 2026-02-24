@@ -142,9 +142,11 @@
         <div class="flex items-center gap-4">
           <a href="https://shogun-docs-mauve.vercel.app/" target="_blank"
             class="minimal-link text-sm font-medium">Docs</a>
-          <button id="theme-toggle" class="btn btn-circle btn-sm">
-            <i class="fas fa-moon"></i>
-          </button>
+          <div id="theme-tooltip" class="tooltip tooltip-bottom" data-tip="Switch to light mode">
+            <button id="theme-toggle" class="btn btn-circle btn-sm" aria-label="Switch to light mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -507,10 +509,16 @@
       });
 
       function updateIcon(theme) {
+        const themeTooltip = document.getElementById("theme-tooltip");
+        const themeToggle = document.getElementById("theme-toggle");
         if (theme === "dark") {
           toggleIcon.className = "fas fa-sun";
+          themeToggle.setAttribute("aria-label", "Switch to light mode");
+          if (themeTooltip) themeTooltip.setAttribute("data-tip", "Switch to light mode");
         } else {
           toggleIcon.className = "fas fa-moon";
+          themeToggle.setAttribute("aria-label", "Switch to dark mode");
+          if (themeTooltip) themeTooltip.setAttribute("data-tip", "Switch to dark mode");
         }
       }
 
