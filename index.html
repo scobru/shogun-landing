@@ -142,8 +142,8 @@
         <div class="flex items-center gap-4">
           <a href="https://shogun-docs-mauve.vercel.app/" target="_blank"
             class="minimal-link text-sm font-medium">Docs</a>
-          <button id="theme-toggle" class="btn btn-circle btn-sm">
-            <i class="fas fa-moon"></i>
+          <button id="theme-toggle" class="btn btn-circle btn-sm" aria-label="Switch to light theme" title="Switch to light theme">
+            <i class="fas fa-sun"></i>
           </button>
         </div>
       </div>
@@ -509,8 +509,12 @@
       function updateIcon(theme) {
         if (theme === "dark") {
           toggleIcon.className = "fas fa-sun";
+          themeToggle.setAttribute("aria-label", "Switch to light theme");
+          themeToggle.setAttribute("title", "Switch to light theme");
         } else {
           toggleIcon.className = "fas fa-moon";
+          themeToggle.setAttribute("aria-label", "Switch to dark theme");
+          themeToggle.setAttribute("title", "Switch to dark theme");
         }
       }
 
